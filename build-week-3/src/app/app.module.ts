@@ -36,6 +36,11 @@ const routes: Route[] = [
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'post_list',
+    component: PostsListComponent,
+    canActivate: [AuthGuard]
   }
 ]
 @NgModule({
