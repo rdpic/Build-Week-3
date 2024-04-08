@@ -66,4 +66,17 @@ export class AuthService {
     const user: AuthData = JSON.parse(userJson);
     this.authSub.next(user);
   }
+
+  getCurrentUserId(): number | null {
+    const userJson = localStorage.getItem('user');
+    console.log('User JSON from localStorage:', userJson);
+
+    if (userJson) {
+        const user = JSON.parse(userJson);
+        console.log('User ID from parsed JSON:', user.user.id);
+        return user.user.id;
+    }
+
+    return null;
+}
 }
