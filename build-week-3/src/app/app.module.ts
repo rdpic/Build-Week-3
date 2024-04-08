@@ -41,6 +41,12 @@ const routes: Route[] = [
     path: 'post_list',
     component: PostsListComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'post_list/:id',
+    component:PostDetailsComponent,
+    canActivate: [AuthGuard]
+
   }
 ]
 @NgModule({

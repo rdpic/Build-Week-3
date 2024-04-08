@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post.interface';
+import { PostService } from 'src/app/services/post.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
-  styleUrls: ['./post-details.component.scss']
+  styleUrls: ['./post-details.component.scss'],
 })
-export class PostDetailsComponent {
+export class PostDetailsComponent implements OnInit {
+  post!: Post;
 
+  constructor(private postSrv: PostService, private router: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.router.params.subscribe((params) => {
+      const id = +params['id'];
+      this.postSrv.getPost(id).subscribe((data) => {
+        this.post = data;
+      });
+    });
+  }
 }
