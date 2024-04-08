@@ -35,6 +35,7 @@
             >Register</a
           >
         </div>
+        <div *ngIf="user" class="d-flex">
         <a
           class="nav-link"
           [routerLink]="['/dashboard']"
@@ -42,6 +43,15 @@
           *ngIf="user"
           >Dashboard</a
         >
+        <a
+          class="nav-link"
+          [routerLink]="['/post_list']"
+          routerLinkActive="active"
+          *ngIf="user"
+          >Post_List</a
+        >
+        </div>
+        
 
         <div>
           <button

@@ -1,1 +1,11 @@
-<p>posts-list works!</p>
+<div class="container">
+    <div *ngFor="let post of posts; let i=index" class="row">
+        <div class="col-12 d-flex border border-1">
+            <p>{{post.id}}</p>
+            <p>{{post.userId}}</p>
+            <p>{{post.title}}</p>
+            <p>{{post.body}}</p>
+            
+        </div>
+    </div>
+</div>
