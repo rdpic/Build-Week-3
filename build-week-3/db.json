@@ -1,6 +1,12 @@
 {
-  "users": [],
-
+  "users": [
+    {
+      "email": "pippo@pippo.com",
+      "password": "$2a$10$bq9oGRfeDBzda537Tts8UuLW3HTESQwJ5YKPuiiiNWACYsBdCzr9e",
+      "name": "Pippo",
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "userId": 1,
