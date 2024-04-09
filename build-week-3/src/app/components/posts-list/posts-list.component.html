@@ -1,15 +1,15 @@
 <div class="container mt-5">
-    <div *ngFor="let post of posts; let i=index" class="row">
-        <div class="card p-0 mt-3">
-            <div class="card-header">
-                <h4>{{post.title.toUpperCase()}}</h4>
-            </div>
-            <div class="card-body">
-
-                <p class="card-text">{{post.body}}</p>
-                <a class="btn btn-primary" routerLink="active" [routerLink]="[post.id]" >Details</a>
-            </div>
+    <div *ngFor="let post of posts; let i=index" class="row d-flex align-items-center mb-4">
+        <div class="col-md-3 d-flex justify-content-end align-items-center">
+            <img [src]="post.user?.image" class="post_image" alt="...">
         </div>
-
+          <div class="col-md-7 border-start card ms-4">
+            <div class="card-body">
+              <h3 class="card-title mb-3">{{post.title}}</h3>
+              <p class="card-text mb-1">{{post.body}}</p>
+              <p class="card-text m-0"><small class="text-body-secondary">By {{post.user?.name}}</small></p>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
     </div>
 </div>
