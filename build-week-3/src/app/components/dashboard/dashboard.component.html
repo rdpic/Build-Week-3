@@ -1,10 +1,11 @@
-<div class="container">
-    <div class="container text-center d-flex gap-5 justify-content-center align-items-center">
+<div class="container mt-4">
+    <div class="container text-center d-flex gap-3 justify-content-center align-items-center">
         <div class="container_pic">
-            <img [src]="user.image" class="rounded-circle border border-2 bg-dark-subtle"/>
+            <img [src]="user.image" class="post_image"/>
         </div>
         <h2 class="title ">Welcome back, {{user.name}} </h2>
     </div>
+    <h3 class="text my-2 ">Ecco a te i tuoi post:</h3>
     <div *ngIf="posts.length > 0">
         <div *ngFor="let post of posts; let i=index" class="row">
             <div class="card p-0 mt-3">
@@ -12,7 +13,6 @@
                     <h4>{{post.title.toUpperCase()}}</h4>
                 </div>
                 <div class="card-body">
-    
                     <p class="card-text">{{post.body}}</p>
                     <a class="btn btn-primary" routerLink="active" [routerLink]="[post.id]" >Details</a>
                 </div>
