@@ -5,6 +5,7 @@ import { PostService } from 'src/app/services/post.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { AuthData } from 'src/app/models/auth-data.interface';
 import { UserService } from 'src/app/services/user.service';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -44,4 +45,22 @@ export class DashboardComponent implements OnInit {
       );
     }
   }
+
+  onSubmit(form: NgForm) {
+    const userId = this.authSrv.getCurrentUserId(); 
+    const post = {
+      ...form.value,
+      userId
+    };
+
+    this.postSrv.newPost(post).subscribe({
+      next: (response) => {
+        console.log('Post created:', response);
+      },
+      error: (error) => {
+        console.error('Error creating post:', error);
+      }
+    });
+  }
+  
 }

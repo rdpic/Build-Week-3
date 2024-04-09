@@ -72,11 +72,10 @@ export class AuthService {
     console.log('User JSON from localStorage:', userJson);
 
     if (userJson) {
-        const user = JSON.parse(userJson);
-        console.log('User ID from parsed JSON:', user.user.id);
-        return user.user.id;
+      const user = JSON.parse(userJson);
+      console.log('User ID from parsed JSON:', user.user.id);
+      return user.user.id;
     }
-
     return null;
-}
+  }
 }
