@@ -21,11 +21,19 @@ export class PostsListComponent implements OnInit {
       this.users = users.reduce((acc, user) => ({...acc, [user.id]: user}), {});
 
       this.postSrv.getPosts().subscribe(posts => {
-        this.posts = posts.map(post => ({
+        this.posts = this.shuffleArray(posts.map(post => ({
           ...post,
-          user: this.users[post.userId] 
-        }));
+          user: this.users[post.userId]
+        })));
       });
     });
+  }
+
+  shuffleArray(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; 
+    }
+    return array;
   }
 }
