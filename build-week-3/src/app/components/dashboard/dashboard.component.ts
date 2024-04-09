@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardComponent implements OnInit {
   userId!: number | null;
+  user!: User;
   posts!: Post[];
 
   constructor(
@@ -29,6 +30,16 @@ export class DashboardComponent implements OnInit {
         },
         (error) => {
           console.error('error: fetching posts');
+        }
+      );
+    }
+    if (this.userId) {
+      this.userSrv.getUser(this.userId).subscribe(
+        (user) => {
+          this.user = user;
+        },
+        (error) => {
+          console.error('error: fetching user');
         }
       );
     }

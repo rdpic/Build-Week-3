@@ -1,10 +1,25 @@
 <div class="container">
+    <div class="container text-center d-flex gap-5 justify-content-center align-items-center">
+        <div class="container_pic">
+            <img [src]="user.image" class="rounded-circle border border-2 bg-dark-subtle"/>
+        </div>
+        <h2 class="title ">Welcome back, {{user.name}} </h2>
+    </div>
     <div *ngIf="posts.length > 0">
-        <div *ngFor="let post of posts">
-            <h3>{{post.title}}</h3>
-            <p>{{post.body}}</p>
-
+        <div *ngFor="let post of posts; let i=index" class="row">
+            <div class="card p-0 mt-3">
+                <div class="card-header">
+                    <h4>{{post.title.toUpperCase()}}</h4>
+                </div>
+                <div class="card-body">
+    
+                    <p class="card-text">{{post.body}}</p>
+                    <a class="btn btn-primary" routerLink="active" [routerLink]="[post.id]" >Details</a>
+                </div>
+            </div>
+    
         </div>
 
     </div>
 </div>
+
