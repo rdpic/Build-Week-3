@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -22,7 +21,7 @@ import { UserComponent } from './components/user/user.component';
 const routes: Route[] = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
@@ -35,20 +34,24 @@ const routes: Route[] = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'post_list',
     component: PostsListComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'post_list/:id',
-    component:PostDetailsComponent,
-    canActivate: [AuthGuard]
-
-  }
-]
+    component: PostDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'post_list/:id',
+    component: PostDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +62,7 @@ const routes: Route[] = [
     DashboardComponent,
     PostsListComponent,
     PostDetailsComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,14 +70,14 @@ const routes: Route[] = [
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    
-
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi: true,
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

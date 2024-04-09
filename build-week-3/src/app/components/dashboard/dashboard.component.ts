@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { AuthData } from 'src/app/models/auth-data.interface';
 import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
+import { ElementRef } from '@angular/core';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,7 +21,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private postSrv: PostService,
     private authSrv: AuthService,
-    private userSrv: UserService
+    private userSrv: UserService,
+    private el: ElementRef
   ) {
     this.userId = this.authSrv.getCurrentUserId();
   }
@@ -47,10 +50,10 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    const userId = this.authSrv.getCurrentUserId(); 
+    const userId = this.authSrv.getCurrentUserId();
     const post = {
       ...form.value,
-      userId
+      userId,
     };
 
     this.postSrv.newPost(post).subscribe({
@@ -59,8 +62,43 @@ export class DashboardComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error creating post:', error);
-      }
+      },
     });
+    form.reset();
   }
-  
+
+  onEdit(postId: number, updatedData: Partial<Post>): void {
+    const userId = this.authSrv.getCurrentUserId();
+
+    const post = { ...updatedData, userId };
+    this.postSrv.updatePost(postId, post).subscribe({
+      next: (response) => console.log('post updated', response),
+    });
+    if (this.userId) {
+      this.postSrv.getPostsByUserId(this.userId).subscribe(
+        (posts) => {
+          this.posts = posts;
+        },
+        (error) => {
+          console.error('error: fetching posts');
+        }
+      );
+    }
+  }
+
+  onDelete(id: number) {
+    if (window.confirm('Are you sure of deleting this post?')) {
+      this.postSrv.deletePost(id).subscribe();
+      if (this.userId) {
+        this.postSrv.getPostsByUserId(this.userId).subscribe(
+          (posts) => {
+            this.posts = posts;
+          },
+          (error) => {
+            console.error('error: fetching posts');
+          }
+        );
+      }
+    }
+  }
 }
