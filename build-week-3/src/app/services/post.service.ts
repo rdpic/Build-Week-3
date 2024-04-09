@@ -4,21 +4,19 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
-
   apiUrl = environment.apiURL;
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getPosts() {
     return this.http.get<Post[]>(`${this.apiUrl}posts`);
   }
 
-  getPost(id:number) {
+  getPost(id: number) {
     return this.http.get<Post>(`${this.apiUrl}posts/${id}`);
   }
 
@@ -26,15 +24,15 @@ export class PostService {
     return this.http.post<Post>(`${this.apiUrl}posts`, data);
   }
 
-  updatePost(id:number, data: Partial<Post>) {
-    return this.http.patch<Post>(`${this.apiUrl}posts/${id}`, data);
+  getPostsByUserId(userId: number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.apiUrl}posts?userId=${userId}`);
   }
 
-  deletePost(id: number) {
-    return this.http.delete<Post>(`${this.apiUrl}posts/${id}`);
+  updatePost(id: number, post: Partial<Post>): Observable<Post> {
+    return this.http.put<Post>(`${this.apiUrl}posts/${id}`, post);
   }
 
-  getPostsByUserId(userId: number): Observable<Post[]>{
-    return this.http.get<Post[]>(`${this.apiUrl}posts?userId=${userId}`)
+  deletePost(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}posts/${id}`);
   }
 }
