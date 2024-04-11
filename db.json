@@ -41,15 +41,23 @@
       "name": "Marcello Gii",
       "image": "https://cdnwp.dealerk.com/eed49ed7/uploads/sites/975/2022/10/porsche-718-cayman-gt4-rs.jpeg",
       "id": 6
+    },
+    {
+      "email": "vito@vito.com",
+      "password": "$2a$10$EZg04txo4IOzimocHxsbhuQN4cMkz5iV5nwV9qHePm70SLBlNHfCu",
+      "name": "Mara GIgianni",
+      "image": "https://robohash.org/doloremquesintcorrupti.png",
+      "id": 7
+    },
+    {
+      "email": "biagio@biagio.com",
+      "password": "$2a$10$Vqasp.8Yjjl1jUYA4HLDxO93wAWrHp0Q2yC5Me6VQEYPZCKbyaJvC",
+      "name": "biagio rossi",
+      "image": "https://img.freepik.com/free-photo/view-cool-powerful-motorcycle_23-2150704865.jpg",
+      "id": 8
     }
   ],
   "posts": [
-    {
-      "userId": 1,
-      "id": 1,
-      "title": "Amazing Day Out!",
-      "body": "Had an incredible day exploring the city. Found some hidden gems that I never knew existed! Can't wait to go back. #CityLife #Adventure"
-    },
     {
       "userId": 1,
       "id": 2,
@@ -69,10 +77,10 @@
       "body": "Spent the afternoon curled up with a good book and lost track of time. There's something magical about getting lost in another world. #Reading #BookLove"
     },
     {
+      "title": "Garde",
+      "body": "Finally gave the garden a little makeover! It's so rewarding to see the transformation. Ready for summer barbecues and garden parties. #Gardening #HomeProject",
       "userId": 1,
-      "id": 5,
-      "title": "Garden Makeover",
-      "body": "Finally gave the garden a little makeover! It's so rewarding to see the transformation. Ready for summer barbecues and garden parties. #Gardening #HomeProject"
+      "id": 5
     },
     {
       "userId": 1,
@@ -283,6 +291,12 @@
       "body": "sdvsdvsd",
       "userId": 5,
       "id": 42
+    },
+    {
+      "title": "Ciao",
+      "body": "sono biagio",
+      "userId": 8,
+      "id": 43
     }
   ]
 }
