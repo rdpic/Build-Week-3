@@ -17,6 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { UserComponent } from './components/user/user.component';
+import { CestinoComponent } from './components/cestino/cestino.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Route[] = [
   {
@@ -63,6 +65,8 @@ const routes: Route[] = [
     PostsListComponent,
     PostDetailsComponent,
     UserComponent,
+    CestinoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

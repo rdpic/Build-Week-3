@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   userId!: number | null;
   user!: User;
   posts!: Post[];
+  deletedPosts!: Post[];
 
   constructor(
     private postSrv: PostService,
