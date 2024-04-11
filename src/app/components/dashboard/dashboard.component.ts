@@ -14,7 +14,8 @@ import { NgForm } from '@angular/forms';
 export class DashboardComponent implements OnInit {
   userId!: number | null;
   user!: User;
-  posts!: Post[];
+  posts: Post[] = [];
+  toBeDeleted: number[] = [];
 
   constructor(
     private postSrv: PostService,
@@ -107,5 +108,29 @@ export class DashboardComponent implements OnInit {
         );
       }
     }
+  }
+
+  toggleDelete(postId: number): void {
+    const index = this.toBeDeleted.indexOf(postId);
+    if (index > -1) {
+      this.toBeDeleted.splice(index, 1);
+    } else {
+      this.toBeDeleted.push(postId);
+    }
+    console.log(this.toBeDeleted)
+  }
+
+  finalizeDeletions(): void {
+    this.toBeDeleted.forEach(id => {
+      this.postSrv.deletePost(id).subscribe({
+        next: () => {
+          console.log(`Post ${id} deleted`);
+          this.posts = this.posts.filter(post => post.id !== id);
+        },
+        error: (error) => console.error('Failed to delete post', error)
+      });
+    });
+    this.toBeDeleted = [];
+    alert('Post eliminated.');
   }
 }
