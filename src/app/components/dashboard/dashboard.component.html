@@ -1,75 +1,17 @@
 <div class="container mt-4">
-  <div
-    class="container text-center d-flex gap-3 justify-content-center align-items-center"
-  >
-    <div class="container_pic">
-      <img [src]="user.image" class="post_image" />
+    <div class="container text-center d-flex gap-3 justify-content-center align-items-center">
+        <div class="container_pic">
+            <img [src]="user.image" class="post_image" />
+        </div>
+        <h2 class="title">Welcome back, {{ user.name }}</h2>
     </div>
-    <h2 class="title">Welcome back, {{ user.name }}</h2>
-  </div>
-  <button
-    type="button"
-    class="btn btn-primary mt-4"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
-    Create new post
-  </button>
-  <h3 class="m-0 mt-4">Your posts:</h3>
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Create new post
-          </h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form #newPost="ngForm" (ngSubmit)="onSubmit(newPost)">
-            <label for="title" class="form-label">Title:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              class="form-control"
-              required
-              ngModel
-            />
-            <label for="body" class="form-label">Body:</label>
-            <textarea
-              id="body"
-              name="body"
-              class="form-control"
-              required
-              ngModel
-            ></textarea>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="submit" class="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+        </button>
+        <button type="button" class="btn btn-danger mt-4 delete-confirm-btn" (click)="finalizeDeletions()">
+            Delete Selected
+        </button>
     </div>
   </div>
   <div class="container">
@@ -113,56 +55,77 @@
                         #modifyForm="ngForm"
                         (ngSubmit)="onEdit(post.id!, modifyForm.value)"
                       >
+
                         <label for="title" class="form-label">Title:</label>
-                        <input
-                          type="text"
-                          id="title"
-                          name="title"
-                          class="form-control"
-                          required
-                          [ngModel]="post.title"
-                        />
+                        <input type="text" id="title" name="title" class="form-control" required ngModel />
                         <label for="body" class="form-label">Body:</label>
-                        <textarea
-                          [ngModel]="post.body"
-                          id="body"
-                          name="body"
-                          class="form-control"
-                          required
-                          ngModel
-                        ></textarea>
+                        <textarea id="body" name="body" class="form-control" required ngModel></textarea>
                         <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <button
-                            type="submit"
-                            class="btn btn-success"
-                            data-bs-dismiss="modal"
-                          >
-                            Save changes
-                          </button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Save changes
+                            </button>
                         </div>
-                      </form>
-                    </div>
-                  </div>
+                    </form>
                 </div>
-              </div>
-              <button
-                type="button"
-                (click)="onDelete(post.id!)"
-                class="btn btn-danger"
-              >
-                Delete
-              </button>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="container">
+        <div *ngIf="posts.length > 0">
+            <div *ngFor="let post of posts; let i = index" class="row">
+                <div class="card p-0 mt-3" [ngClass]="{'post-to-be-deleted': toBeDeleted.includes(post.id!), 'post-to-be-restored': !toBeDeleted.includes(post.id!)}">
+                    <div class="card-header">
+                        <h4>{{ post.title!.toUpperCase() }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ post.body }}</p>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                [attr.data-bs-target]="'#modify' + i">
+                                Modify
+                            </button>
+                            <div class="modal fade" [id]="'modify' + i" tabindex="-1"
+                                [attr.aria-labelledby]="'modifyLabel' + i" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modify">Modify post</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form #modifyForm="ngForm" (ngSubmit)="onEdit(post.id!, modifyForm.value)">
+                                                <label for="title" class="form-label">Title:</label>
+                                                <input type="text" id="title" name="title" class="form-control" required
+                                                    [ngModel]="post.title" />
+                                                <label for="body" class="form-label">Body:</label>
+                                                <textarea [ngModel]="post.body" id="body" name="body"
+                                                    class="form-control" required ngModel></textarea>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button type="submit" class="btn btn-success"
+                                                        data-bs-dismiss="modal">
+                                                        Save changes
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" (click)="toggleDelete(post.id!)" class="btn btn-warning">
+                                {{ toBeDeleted.includes(post.id!) ? 'Undo Delete' : 'Delete' }}
+                            </button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
