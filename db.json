@@ -1,0 +1,288 @@
+{
+  "users": [
+    {
+      "email": "pippo@pippo.com",
+      "password": "$2a$10$bq9oGRfeDBzda537Tts8UuLW3HTESQwJ5YKPuiiiNWACYsBdCzr9e",
+      "name": "Pippo",
+      "id": 1,
+      "image": "https://www.zooplus.it/magazine/wp-content/uploads/2024/02/gatto-soriano.jpeg"
+    },
+    {
+      "email": "mario@rossi.com",
+      "password": "$2a$10$OXpUNkjJtoF0Ak5caJyxZOZPpE3y6QKzstrxkjturBhsg4qGBsj8S",
+      "name": "Mario Rossi",
+      "image": "C:\\fakepath\\pic_meno_seria.jpg",
+      "id": 2
+    },
+    {
+      "email": "aldo@bianchi.com",
+      "password": "$2a$10$DYgasJFkv0VJ7L1KI4R/jOorW..UjJkVbORJws1R3lGpk6mHS305u",
+      "name": "Aldo Bianchi",
+      "image": "",
+      "id": 3
+    },
+    {
+      "email": "maria@verdi.com",
+      "password": "$2a$10$jQnU3VbUgNCf52NSiXz3IO35.Jo/nwMQXPGl0vSooB.wTCrm8tTzm",
+      "name": "Maria Verdi",
+      "image": "https://robohash.org/hicveldicta.png",
+      "id": 4
+    },
+    {
+      "email": "topolino@topolino.com",
+      "password": "$2a$10$V8yy7OAiQzIrJVxfIJrwturt0ugkM94vI6RCSxHRco.GnF3nW.Y2a",
+      "name": "Marco Gialli",
+      "image": "https://wips.plug.it/cips/paginegialle.it/magazine/cms/2022/01/cane-di-razza.jpg",
+      "id": 5
+    },
+    {
+      "email": "paperina@paperina.com",
+      "password": "$2a$10$Qfqbnw/gEGKktn2jQgZQtOCCstJicElZuRmql.FzvPVMisPobJQKO",
+      "name": "Marcello Gii",
+      "image": "https://cdnwp.dealerk.com/eed49ed7/uploads/sites/975/2022/10/porsche-718-cayman-gt4-rs.jpeg",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Amazing Day Out!",
+      "body": "Had an incredible day exploring the city. Found some hidden gems that I never knew existed! Can't wait to go back. #CityLife #Adventure"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Homemade Pizza Night",
+      "body": "Decided to make homemade pizza tonight and it turned out delicious! Who needs takeout when you can make it better at home? #Cooking #PizzaNight"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Morning Run Views",
+      "body": "Nothing beats the peace and serenity of a morning run by the river. Started the day off feeling refreshed and energized! #MorningRun #Nature"
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Bookworm Adventures",
+      "body": "Spent the afternoon curled up with a good book and lost track of time. There's something magical about getting lost in another world. #Reading #BookLove"
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "Garden Makeover",
+      "body": "Finally gave the garden a little makeover! It's so rewarding to see the transformation. Ready for summer barbecues and garden parties. #Gardening #HomeProject"
+    },
+    {
+      "userId": 1,
+      "id": 6,
+      "title": "Starry Night Camping",
+      "body": "Spent the night camping under a starry sky. It's moments like these that remind me how beautiful our planet really is. #Camping #StarryNight"
+    },
+    {
+      "userId": 1,
+      "id": 7,
+      "title": "DIY Home Decor",
+      "body": "Got crafty this weekend and tackled some DIY home decor projects. It's amazing what you can create with a little inspiration and effort. #DIY #HomeDecor"
+    },
+    {
+      "userId": 1,
+      "id": 8,
+      "title": "Exploring Local Trails",
+      "body": "Discovered some local hiking trails today and was amazed by the stunning views! Nature really is the best artist. #Hiking #ExploreLocal"
+    },
+    {
+      "userId": 1,
+      "id": 9,
+      "title": "Family Game Night",
+      "body": "Had a blast at family game night. It's always a good time when you can laugh and compete with the ones you love. #FamilyTime #GameNight"
+    },
+    {
+      "userId": 1,
+      "id": 10,
+      "title": "Weekend Baking Experiment",
+      "body": "Tried my hand at baking this weekend and it was a success! There's nothing like the smell of fresh baked goods in the house. #Baking #WeekendVibes"
+    },
+    {
+      "userId": 2,
+      "id": 11,
+      "title": "Sunset Photography",
+      "body": "Caught the most breathtaking sunset today. The colors were out of this world! #SunsetLovers #Photography"
+    },
+    {
+      "userId": 2,
+      "id": 12,
+      "title": "Fitness Journey Update",
+      "body": "Reached a new personal best at the gym today. Feeling stronger each day! #FitnessGoals #Workout"
+    },
+    {
+      "userId": 2,
+      "id": 13,
+      "title": "Throwback Travel",
+      "body": "Throwing it back to my last vacation. Missing the beach and endless sunshine. #TravelDiaries #TBT"
+    },
+    {
+      "userId": 2,
+      "id": 14,
+      "title": "Art Inspiration",
+      "body": "Spent my afternoon at the art gallery. Came back feeling so inspired. #ArtLover #CreativeSoul"
+    },
+    {
+      "userId": 2,
+      "id": 15,
+      "title": "Coffee Connoisseur",
+      "body": "Tried a new coffee shop today and it did not disappoint. Might have found my new favorite spot. #CoffeeAddict #CafeHopping"
+    },
+    {
+      "userId": 2,
+      "id": 16,
+      "title": "Sustainable Living",
+      "body": "Started my journey towards living a more sustainable life. Every small change counts. #EcoFriendly #Sustainability"
+    },
+    {
+      "userId": 2,
+      "id": 17,
+      "title": "Music Festival Fun",
+      "body": "Had an amazing time at the music festival this weekend. Live music feeds the soul. #FestivalVibes #LiveMusic"
+    },
+    {
+      "userId": 2,
+      "id": 18,
+      "title": "Road Trip Adventures",
+      "body": "Embarked on a spontaneous road trip. The freedom of the open road is exhilarating. #RoadTrip #Adventure"
+    },
+    {
+      "userId": 2,
+      "id": 19,
+      "title": "Learning to Cook",
+      "body": "Started learning how to cook and it's been a delicious journey so far. Masterchef, here I come! #Cooking #NewSkills"
+    },
+    {
+      "userId": 2,
+      "id": 20,
+      "title": "Urban Exploration",
+      "body": "Explored the hidden streets of my city today. Found some amazing street art! #UrbanExploring #StreetArt"
+    },
+    {
+      "userId": 3,
+      "id": 21,
+      "title": "Yoga Retreat",
+      "body": "Just got back from a yoga retreat. Feeling refreshed and at peace. #YogaLife #Retreat"
+    },
+    {
+      "userId": 3,
+      "id": 22,
+      "title": "Gardening Wins",
+      "body": "My garden is thriving! There's something so rewarding about growing your own food. #GardenLife #HomeGrown"
+    },
+    {
+      "userId": 3,
+      "id": 23,
+      "title": "Mountain Hiking",
+      "body": "Conquered a mountain today. The view from the top was worth every step. #HikingAdventures #MountainView"
+    },
+    {
+      "userId": 3,
+      "id": 24,
+      "title": "Poetry Night",
+      "body": "Attended a poetry reading last night. The talent was incredible. #Poetry #OpenMic"
+    },
+    {
+      "userId": 3,
+      "id": 25,
+      "title": "Vintage Market Finds",
+      "body": "Found some treasures at the vintage market. I love giving old items new life. #Vintage #MarketFinds"
+    },
+    {
+      "userId": 3,
+      "id": 26,
+      "title": "DIY Projects",
+      "body": "Tackled some DIY projects this weekend. There's something so satisfying about creating something with your own hands. #DIY #Crafting"
+    },
+    {
+      "userId": 3,
+      "id": 27,
+      "title": "Local Farmers Market",
+      "body": "Visited the local farmers market and got some fresh, organic produce. Support local! #FarmersMarket #ShopLocal"
+    },
+    {
+      "userId": 3,
+      "id": 28,
+      "title": "Beach Day Bliss",
+      "body": "Spent the day at the beach soaking up the sun. Days like these are what summer is all about. #BeachDay #SummerVibes"
+    },
+    {
+      "userId": 3,
+      "id": 29,
+      "title": "A Night at the Theater",
+      "body": "Saw an amazing play at the theater tonight. The performance was stunning! #Theater #Culture"
+    },
+    {
+      "userId": 3,
+      "id": 30,
+      "title": "Cycling Through the City",
+      "body": "Took my bike out for a spin through the city. It's such a fun way to explore. #Cycling #CityLife"
+    },
+    {
+      "userId": 4,
+      "id": 31,
+      "title": "Skateboarding Adventures",
+      "body": "Hit the skatepark today. Finally nailed a trick I've been working on for weeks! #Skateboarding #Progress"
+    },
+    {
+      "userId": 4,
+      "id": 32,
+      "title": "Home Renovation Update",
+      "body": "Made some progress on the home renovation. It's coming together nicely. #Renovation #HomeImprovement"
+    },
+    {
+      "userId": 4,
+      "id": 33,
+      "title": "Winter Wonderland",
+      "body": "Woke up to a winter wonderland outside my window. Let it snow! #Winter #SnowDay"
+    },
+    {
+      "userId": 4,
+      "id": 34,
+      "title": "Sushi Making Class",
+      "body": "Took a sushi making class tonight. I'm officially a sushi chef now. #Sushi #CookingClass"
+    },
+    {
+      "userId": 4,
+      "id": 35,
+      "title": "Puppy Love",
+      "body": "Adopted a puppy today and my heart is full. Welcome to the family, little one! #PuppyLove #AdoptDontShop"
+    },
+    {
+      "userId": 5,
+      "id": 38,
+      "title": "Local Art Fair",
+      "body": "Spent the afternoon at a local art fair. So inspired by the creativity and talent in my community. #ArtFair #SupportLocalArtists"
+    },
+    {
+      "userId": 5,
+      "id": 39,
+      "title": "Picnic in the Park",
+      "body": "Had a lovely picnic in the park with friends. Good food, good company, and lots of sunshine. #Picnic #Friends"
+    },
+    {
+      "userId": 5,
+      "id": 40,
+      "title": "Night Sky Photography",
+      "body": "Tried my hand at night sky photography. Captured some beautiful shots of the stars. #Photography #NightSky"
+    },
+    {
+      "title": "scvssc",
+      "body": "ciao sono Vito",
+      "userId": 5,
+      "id": 41
+    },
+    {
+      "title": "fvfvf",
+      "body": "sdvsdvsd",
+      "userId": 5,
+      "id": 42
+    }
+  ]
+}
