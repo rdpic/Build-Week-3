@@ -74,6 +74,16 @@
       "userId": 1,
       "postId": 42,
       "id": 2
+    },
+    {
+      "userId": 8,
+      "postId": 28,
+      "id": 3
+    },
+    {
+      "userId": 8,
+      "postId": 3,
+      "id": 4
     }
   ],
   "posts": [
