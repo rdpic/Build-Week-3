@@ -14,10 +14,14 @@ import { Favorite } from 'src/app/models/favorite.interface';
 export class PostsListComponent implements OnInit {
     posts: any[] = [];
     users: { [key: string]: User } = {};
-    favourites: Favorite[] = []
+    favourites: Favorite[] = [];
     favouritePostsIds: Set<number> = new Set<number>();
 
-    constructor(private postSrv: PostService, private userSrv: UserService, private authSrv: AuthService) { }
+    constructor(
+        private postSrv: PostService,
+        private userSrv: UserService,
+        private authSrv: AuthService
+    ) {}
 
     ngOnInit(): void {
         this.userSrv.getUsers().subscribe((users) => {
@@ -35,6 +39,7 @@ export class PostsListComponent implements OnInit {
                 );
             });
         });
+        this.loadUserFavorites();
     }
 
     shuffleArray(array: any[]): any[] {
@@ -54,7 +59,8 @@ export class PostsListComponent implements OnInit {
                 next: (fetchedFavorites) => {
                     this.favourites = fetchedFavorites;
                 },
-                error: (error) => console.error('Error loading favorites', error),
+                error: (error) =>
+                    console.error('Error loading favorites', error),
             });
         }
     }
@@ -77,10 +83,13 @@ export class PostsListComponent implements OnInit {
         if (favorite) {
             this.postSrv.removeFavorite(favorite.id).subscribe({
                 next: () => {
-                    this.favourites = this.favourites.filter(f => f.postId !== postId);
+                    this.favourites = this.favourites.filter(
+                        (f) => f.postId !== postId
+                    );
                     console.log('Favorite removed:', postId);
                 },
-                error: (error) => console.error('Error removing favorite', error),
+                error: (error) =>
+                    console.error('Error removing favorite', error),
             });
         }
     }
@@ -89,7 +98,9 @@ export class PostsListComponent implements OnInit {
         console.log(`Toggling favorite for post ID: ${postId}`);
 
         if (this.isFavorite(postId)) {
-            console.log(`Post ID ${postId} is currently a favorite. Removing...`);
+            console.log(
+                `Post ID ${postId} is currently a favorite. Removing...`
+            );
             const favorite = this.getFavorite(postId);
             if (favorite) {
                 this.postSrv.removeFavorite(favorite.id).subscribe({
@@ -123,15 +134,15 @@ export class PostsListComponent implements OnInit {
     }
 
     isFavorite(postId: number): boolean {
-        return this.favourites.some(f => f.postId === postId);
+        return this.favourites.some((f) => f.postId === postId);
     }
 
     getFavorite(postId: number): Favorite | undefined {
-        return this.favourites.find(f => f.postId === postId);
+        return this.favourites.find((f) => f.postId === postId);
     }
 
     getFavoriteId(postId: number): number | undefined {
-        const favorite = this.favourites.find(f => f.postId === postId);
+        const favorite = this.favourites.find((f) => f.postId === postId);
         return favorite ? favorite.id : undefined;
     }
 }

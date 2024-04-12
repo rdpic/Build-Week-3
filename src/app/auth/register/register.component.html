@@ -1,55 +1,56 @@
 <div class="container text-center p-5">
-    <h1>SIGN UP</h1>
     <div class="container">
-      <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
-        <div class="form-group">
-          <label for="name" class="form-label">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            class="form-control"
-            ngModel
-          />
-  
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            class="form-control"
-            ngModel
-          />
-  
-          <label for="password" class="form-label">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            class="form-control"
-            ngModel
-          />
-          
-          <label for="image" class="form-label">Upload pic</label>
-          <input
-            type="url"
-            id="image"
-            name="image"
-            class="form-control"
-            ngModel
-          />
+        <div class="card bg-white p-5 rounded-5">
+            <h1>SIGN UP</h1>
+            <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+                <div class="form-group">
+                    <input
+                        placeholder="Name..."
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="form-control-plaintext border-bottom mb-4"
+                        ngModel
+                    />
+
+                    <input
+                        placeholder="Email..."
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="form-control-plaintext border-bottom mb-4"
+                        ngModel
+                    />
+
+                    <input
+                        placeholder="Password..."
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        class="form-control-plaintext border-bottom mb-4"
+                        ngModel
+                    />
+
+                    <input
+                        placeholder="Url Image..."
+                        type="url"
+                        id="image"
+                        name="image"
+                        class="form-control-plaintext border-bottom mb-4"
+                        ngModel
+                    />
+                </div>
+                <button
+                    type="submit"
+                    [disabled]="signupForm.invalid"
+                    class="btn btn-primary mt-5"
+                >
+                    REGISTER NOW
+                </button>
+            </form>
         </div>
-        <button
-          type="submit"
-          [disabled]="signupForm.invalid"
-          class="btn btn-primary mt-5"
-        >
-          SIGN UP NOW
-        </button>
-      </form>
     </div>
-  </div>
-  
+</div>

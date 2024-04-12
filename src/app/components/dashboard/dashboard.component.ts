@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
     posts: Post[] = [];
     toBeDeleted: number[] = [];
     favorites: Post[] = [];
+    users: { [key: string]: User } = {};
 
     constructor(
         private postSrv: PostService,
@@ -52,6 +53,12 @@ export class DashboardComponent implements OnInit {
             if (auth && auth.user) {
                 this.loadUserFavorites(Number(auth.user.id));
             }
+        });
+        this.userSrv.getUsers().subscribe((users) => {
+            this.users = users.reduce(
+                (acc, user) => ({ ...acc, [user.id]: user }),
+                {}
+            );
         });
     }
 
@@ -146,22 +153,26 @@ export class DashboardComponent implements OnInit {
     loadUserFavorites(userId: number) {
         this.postSrv.getAllFavorites(userId).subscribe((favorites) => {
             console.log('All favorites fetched:', favorites);
-    
+
             if (!favorites.length) {
                 this.favorites = [];
                 return;
             }
-    
+
             const requests = favorites.map((fav) =>
                 this.postSrv.getPost(fav.postId).pipe(
                     catchError((error) => {
-                        console.error(`Error fetching post details for post ID ${fav.postId}: ${error}`);
+                        console.error(
+                            `Error fetching post details for post ID ${fav.postId}: ${error}`
+                        );
                         return of(null);
                     })
                 )
             );
             forkJoin(requests).subscribe((results) => {
-                this.favorites = results.filter((result): result is Post => result !== null);
+                this.favorites = results.filter(
+                    (result): result is Post => result !== null
+                );
                 console.log('Filtered favorites:', this.favorites);
             });
         });
