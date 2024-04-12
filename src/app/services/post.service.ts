@@ -21,6 +21,7 @@ export class PostService {
   }
 
   newPost(data: Post) {
+    data.createdAt = new Date();
     return this.http.post<Post>(`${this.apiUrl}posts`, data);
   }
 

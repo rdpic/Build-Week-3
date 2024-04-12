@@ -1,26 +1,28 @@
 <div class="container mt-5">
-  <div
-    *ngFor="let post of posts; let i = index"
-    class="row d-flex align-items-center mb-4"
-  >
-    <div class="col-md-3 d-flex justify-content-end align-items-center">
-      <img [src]="post.user?.image" class="post_image" alt="..." />
-    </div>
-    <div class="col-md-7 border-start card ms-4">
-      <div class="card-body">
-        <h3 class="card-title mb-3">{{ post.title }}</h3>
-        <p class="card-text mb-1">{{ post.body }}</p>
-        <p class="card-text m-0">
-          <small class="text-body-secondary">By {{ post.user?.name }}</small>
-        </p>
-        <a
-          class="btn btn-primary float-end"
-          routerLink="active"
-          [routerLink]="['/user',post.userId]"
-          >Go to the user</a
-        >
-      </div>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
+	<div *ngFor="let post of posts; let i = index" class="row d-flex align-items-center mb-4">
+		<div class="col-md-3 d-flex justify-content-end align-items-center">
+			<a routerLink="active" [routerLink]="['/user',post.userId]">
+				<img [src]="post.user?.image" class="post_image" alt="..." />
+			</a>
+		</div>
+		<div class="col-md-7 border-start card ms-4">
+			<div class="card-body">
+				<h3 class="card-title mb-3">{{ post.title }}</h3>
+				<p class="card-text mb-1">{{ post.body }}</p>
+				<p class="card-text m-0">
+					<small class="text-body-secondary">By </small>
+					<a routerLink="active" [routerLink]="['/user',post.userId]">
+						<small class="text-body-secondary">{{ post.user?.name }}</small>
+					</a>
+				</p>
+				<p class="card-text date-p mb-0 float-start text-body-secondary">
+					<small>Posted on: {{ post.createdAt | date: 'MMM d, y, h:mm a' }}</small>
+				</p>
+				<a class="btn btn-primary float-end user-profile-btn" routerLink="active" [routerLink]="['/user',post.userId]">
+					User Profile
+				</a>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
 </div>

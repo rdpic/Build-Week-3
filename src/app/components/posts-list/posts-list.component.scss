@@ -1,5 +1,4 @@
 .row:hover {
-    cursor: pointer;
     transform: scale(1.05);
 }
 
@@ -14,4 +13,21 @@
     object-fit: cover;
     width: 170px;
     height: 170px;
+}
+
+.user-profile-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+  .user-profile-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

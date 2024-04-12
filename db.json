@@ -11,21 +11,21 @@
       "email": "mario@rossi.com",
       "password": "$2a$10$OXpUNkjJtoF0Ak5caJyxZOZPpE3y6QKzstrxkjturBhsg4qGBsj8S",
       "name": "Mario Rossi",
-      "image": "C:\\fakepath\\pic_meno_seria.jpg",
+      "image": "https://www.keblog.it/wp-content/uploads/2021/04/quanto-possono-essere-grandi-cose-absolute-unit-60.jpg",
       "id": 2
     },
     {
       "email": "aldo@bianchi.com",
       "password": "$2a$10$DYgasJFkv0VJ7L1KI4R/jOorW..UjJkVbORJws1R3lGpk6mHS305u",
       "name": "Aldo Bianchi",
-      "image": "",
+      "image": "https://static.ohga.it/wp-content/uploads/sites/24/2019/06/iStock-910662120.jpg",
       "id": 3
     },
     {
       "email": "maria@verdi.com",
       "password": "$2a$10$jQnU3VbUgNCf52NSiXz3IO35.Jo/nwMQXPGl0vSooB.wTCrm8tTzm",
       "name": "Maria Verdi",
-      "image": "https://robohash.org/hicveldicta.png",
+      "image": "https://mlellt2rwia3.i.optimole.com/w:1049/h:716/q:mauto/ig:avif/f:best/https://www.forthebirds.it/wp-content/uploads/2020/03/ara-macao.jpg",
       "id": 4
     },
     {
@@ -46,7 +46,7 @@
       "email": "vito@vito.com",
       "password": "$2a$10$EZg04txo4IOzimocHxsbhuQN4cMkz5iV5nwV9qHePm70SLBlNHfCu",
       "name": "Mara GIgianni",
-      "image": "https://robohash.org/doloremquesintcorrupti.png",
+      "image": "https://www.repstatic.it/content/contenthub/img/2023/03/14/231059788-28c9db18-0db4-418e-a74f-ae01c2796671.jpg",
       "id": 7
     },
     {
@@ -55,6 +55,13 @@
       "name": "biagio rossi",
       "image": "https://img.freepik.com/free-photo/view-cool-powerful-motorcycle_23-2150704865.jpg",
       "id": 8
+    },
+    {
+      "email": "riccardodelpiccolo1@gmail.com",
+      "password": "$2a$10$3AC9RdC4i9vSlRJ92lKv3.66xmMbtFj9FtI0uCHT.ClP/7K7VA.O2",
+      "name": "Rick Small",
+      "image": "https://www.deabyday.tv/.imaging/default/article/articles/pets/what-snew/Il-parrocchetto-dal-collare---una-specie-invasiva-/imageOriginal.jpg",
+      "id": 9
     }
   ],
   "posts": [
@@ -87,12 +94,6 @@
       "id": 6,
       "title": "Starry Night Camping",
       "body": "Spent the night camping under a starry sky. It's moments like these that remind me how beautiful our planet really is. #Camping #StarryNight"
-    },
-    {
-      "userId": 1,
-      "id": 7,
-      "title": "DIY Home Decor",
-      "body": "Got crafty this weekend and tackled some DIY home decor projects. It's amazing what you can create with a little inspiration and effort. #DIY #HomeDecor"
     },
     {
       "userId": 2,
@@ -257,28 +258,115 @@
       "body": "Had a lovely picnic in the park with friends. Good food, good company, and lots of sunshine. #Picnic #Friends"
     },
     {
-      "userId": 5,
-      "id": 40,
-      "title": "Night Sky Photography",
-      "body": "Tried my hand at night sky photography. Captured some beautiful shots of the stars. #Photography #NightSky"
+      "userId": 6,
+      "id": 41,
+      "title": "Thrifting Adventures",
+      "body": "Went thrifting and found some amazing vintage pieces. Thrifting is like treasure hunting! #Thrifting #VintageFinds"
     },
     {
-      "title": "scvssc",
-      "body": "ciao sono Vito",
-      "userId": 5,
-      "id": 41
+      "userId": 6,
+      "id": 42,
+      "title": "Exploring New Recipes",
+      "body": "Spent the day exploring new recipes and cooking up a storm. There's so much joy in cooking! #Cooking #Foodie"
     },
     {
-      "title": "fvfvf",
-      "body": "sdvsdvsd",
-      "userId": 5,
-      "id": 42
+      "userId": 6,
+      "id": 43,
+      "title": "Kayaking Fun",
+      "body": "Went kayaking for the first time and absolutely loved it. Can't wait to go back out on the water. #Kayaking #OutdoorAdventures"
+    },
+    {
+      "userId": 6,
+      "id": 44,
+      "title": "DIY Home Office Makeover",
+      "body": "Gave my home office a little DIY makeover. It's amazing what a difference some small changes can make. #HomeOffice #DIY"
+    },
+    {
+      "userId": 6,
+      "id": 45,
+      "title": "Farm to Table Dinner",
+      "body": "Attended a farm to table dinner event. The food was fresh, delicious, and locally sourced. #FarmToTable #SustainableEating"
+    },
+    {
+      "userId": 7,
+      "id": 46,
+      "title": "Meditation and Mindfulness",
+      "body": "Incorporated meditation into my daily routine. Feeling more centered and mindful. #Meditation #Mindfulness"
+    },
+    {
+      "userId": 7,
+      "id": 47,
+      "title": "Weekend Getaway",
+      "body": "Took a spontaneous weekend getaway to the mountains. The fresh air and scenery were just what I needed. #Getaway #Mountains"
+    },
+    {
+      "userId": 7,
+      "id": 48,
+      "title": "Learning a New Language",
+      "body": "Started learning a new language. It's challenging but so rewarding. #LanguageLearning #NewSkills"
+    },
+    {
+      "userId": 7,
+      "id": 49,
+      "title": "Backyard Camping",
+      "body": "Tried backyard camping last night. It was a fun way to enjoy nature without leaving home. #Camping #Staycation"
+    },
+    {
+      "userId": 7,
+      "id": 50,
+      "title": "Sustainable Fashion",
+      "body": "Exploring sustainable fashion options. It feels good to wear clothes that are kind to the planet. #SustainableFashion #EcoFriendly"
+    },
+    {
+      "userId": 8,
+      "id": 51,
+      "title": "Virtual Book Club Meeting",
+      "body": "Had our first virtual book club meeting. Discussing books with friends is always a highlight of my month. #BookClub #Reading"
+    },
+    {
+      "userId": 8,
+      "id": 52,
+      "title": "Home Baked Bread",
+      "body": "Baked bread from scratch for the first time. The aroma in the house is incredible. #Baking #HomemadeBread"
+    },
+    {
+      "userId": 8,
+      "id": 53,
+      "title": "Succulent Gardening",
+      "body": "Started a little succulent garden. These little plants are so adorable and easy to care for. #Gardening #Succulents"
+    },
+    {
+      "userId": 8,
+      "id": 54,
+      "title": "Custom Jewelry Making",
+      "body": "Took up jewelry making and created some unique pieces. It's a fun and creative hobby. #JewelryMaking #Crafts"
+    },
+    {
+      "userId": 8,
+      "id": 55,
+      "title": "Exploring Street Food",
+      "body": "Went on a street food adventure in my city. There's so much delicious food to discover right on your doorstep. #StreetFood #Foodie"
+    },
+    {
+      "title": "Bird Watching",
+      "body": "I love #parrots",
+      "userId": 9,
+      "createdAt": "2024-04-11T15:16:47.278Z",
+      "id": 56
+    },
+    {
+      "title": "Amazing Birds",
+      "body": "#Parrots = best birds in the world.",
+      "userId": 9,
+      "createdAt": "2024-04-11T15:26:42.236Z",
+      "id": 57
     },
     {
       "title": "Ciao",
-      "body": "sono biagio",
-      "userId": 8,
-      "id": 43
+      "body": "ciao",
+      "userId": 9,
+      "createdAt": "2024-04-11T15:29:26.372Z",
+      "id": 58
     }
   ]
 }

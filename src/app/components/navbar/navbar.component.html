@@ -1,26 +1,29 @@
 <nav class="navbar navbar-expand-lg d-flex sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand"><img src="https://post.app/wp-content/uploads/2020/03/POST-APP.png" class="rounded-2" style="width: 70px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <div *ngIf="!user" class="d-flex">
-          <a class="nav-link active text-secondary" [routerLink]="['/']" routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">Home</a>
-          <a class="nav-link text-secondary" [routerLink]="['/login']" routerLinkActive="active">Login</a>
-          <a class="nav-link text-secondary" [routerLink]="['/register']" routerLinkActive="active">Register</a>
+    <div class="container-fluid">
+        <a class="navbar-brand"><img src="https://post.app/wp-content/uploads/2020/03/POST-APP.png" class="rounded-2"
+                style="width: 70px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div *ngIf="!user" class="d-flex">
+                    <a class="nav-link active text-secondary" [routerLink]="['/']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                    <a class="nav-link text-white" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+                    <a class="nav-link text-white" [routerLink]="['/register']" routerLinkActive="active">Register</a>
+                </div>
+                <div *ngIf="user" class="d-flex gap-2 flex-column flex-md-row">
+                    <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active"
+                        *ngIf="user">Dashboard</a>
+                    <a class="nav-link" [routerLink]="['/post_list']" routerLinkActive="active"
+                        *ngIf="user">Post List</a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger logout-btn" *ngIf="user" (click)="logout()">
+                Logout
+            </button>
         </div>
-        <div *ngIf="user" class="d-flex gap-2 flex-column flex-md-row">
-          <a class="nav-link text-secondary" [routerLink]="['/dashboard']" routerLinkActive="active" *ngIf="user">Dashboard</a>
-          <a class="nav-link text-secondary" [routerLink]="['/post_list']" routerLinkActive="active" *ngIf="user">Post List</a>
-        </div>
-      </div>
-      <button type="button" class="btn btn-danger" *ngIf="user" (click)="logout()">
-        Logout
-      </button>
     </div>
-  </div>
 </nav>

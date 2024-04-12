@@ -12,6 +12,71 @@
 .delete-confirm-btn {
     position: relative;
     right: 0;
+    background-color: #ff4136;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-confirm-btn:hover {
+    background-color: #e12d2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modify-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+.modify-btn:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.delete-btn {
+    background-color: #e0b744;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+.delete-btn:hover {
+    background-color: #cfa900;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    background-color: #c9c4c4;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background-color: #999999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .post-to-be-deleted {
@@ -22,4 +87,28 @@
 .post-to-be-restored {
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+.create-post-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+.create-post-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.date-p {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    margin-left: 66%;
 }
