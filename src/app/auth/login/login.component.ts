@@ -4,21 +4,23 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private authSrv: AuthService, private router: Router) {}
+    constructor(private authSrv: AuthService, private router: Router) {}
 
-  login(form: NgForm) {
-    console.log(form.value);
-    try {
-      this.authSrv.login(form.value).subscribe();
-      alert('Login successful');
-      this.router.navigate(['/dashboard']);
-    } catch (error) {
-      console.log(error);
+    login(form: NgForm) {
+        console.log(form.value);
+        try {
+            this.authSrv.login(form.value).subscribe();
+            alert('Login successful');
+            setTimeout(() => {
+                this.router.navigate(['/dashboard']);
+            }, 1000);
+        } catch (error) {
+            console.log(error);
+        }
     }
-  }
 }

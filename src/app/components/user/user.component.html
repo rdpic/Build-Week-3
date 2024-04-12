@@ -1,5 +1,7 @@
 <div class="container mt-4">
-    <div class="container text-center d-flex gap-3 justify-content-center align-items-center">
+    <div
+        class="container text-center d-flex gap-3 justify-content-center align-items-center"
+    >
         <div class="container_pic">
             <img [src]="user.image" class="post_image" />
         </div>
@@ -9,10 +11,18 @@
     <div *ngIf="posts.length > 0" class="my-2">
         <div class="row d-flex justify-content-center gy-2">
             <div class="col-9">
-                <h3 class="text-left">{{user.name}}'s posts:</h3>
-                <div *ngFor="let post of posts; let i = index" class="card p-0 mt-3">
-                    <div class="card-body p-4 my-2 ">
-                        <h4 class="fw-medium mb-2">{{ post.title!.toUpperCase() }}</h4>
+                <a class="btn btn-primary" [routerLink]="['/post_list']"
+                    >Back</a
+                >
+                <h3 class="text-left">{{ user.name }}'s posts:</h3>
+                <div
+                    *ngFor="let post of posts; let i = index"
+                    class="card p-0 mt-3"
+                >
+                    <div class="card-body p-4 my-2">
+                        <h4 class="fw-medium mb-2">
+                            {{ post.title!.toUpperCase() }}
+                        </h4>
                         <p class="card-text">{{ post.body }}</p>
                     </div>
                 </div>

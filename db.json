@@ -67,18 +67,13 @@
   "favorites": [
     {
       "userId": 1,
-      "postId": 13,
+      "postId": 54,
       "id": 1
     },
     {
       "userId": 1,
-      "postId": 2,
+      "postId": 42,
       "id": 2
-    },
-    {
-      "userId": 1,
-      "postId": 39,
-      "id": 3
     }
   ],
   "posts": [

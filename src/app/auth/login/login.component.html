@@ -1,15 +1,42 @@
 <div class="container text-center p-5">
-    <h1>LOGIN</h1>
     <div class="container">
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" required class="form-control" ngModel>
+        <div class="card bg-white p-5 rounded-5">
+            <h1>LOGIN</h1>
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                <div class="form-group">
+                    <input
+                        placeholder="Email..."
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        class="form-control-plaintext border-bottom mb-4"
+                        ngModel
+                    />
 
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" required class="form-control" ngModel>
-            </div>
-            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary mt-5">LOGIN</button>
-        </form>
+                    <input
+                        placeholder="Password..."
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                        class="form-control-plaintext border-bottom"
+                        ngModel
+                    />
+                </div>
+                <p class="mt-4">
+                    Don't have an account yet?
+                    <a [routerLink]="['/register']">Register</a>
+                </p>
+                <button
+                    type="submit"
+                    [disabled]="loginForm.invalid"
+                    class="btn btn-primary mt-3"
+                >
+                    LOGIN
+                </button>
+            </form>
+        </div>
     </div>
 </div>
+<div id="container"></div>
