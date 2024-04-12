@@ -64,6 +64,73 @@
       "id": 9
     }
   ],
+  "favourites": [
+    {
+      "userId": 9,
+      "postId": 34,
+      "id": 1
+    },
+    {
+      "userId": 9,
+      "postId": 34,
+      "id": 2
+    },
+    {
+      "userId": 9,
+      "postId": 42,
+      "id": 3
+    },
+    {
+      "userId": 9,
+      "postId": 12,
+      "id": 4
+    },
+    {
+      "userId": 9,
+      "postId": 3,
+      "id": 5
+    },
+    {
+      "userId": 9,
+      "postId": 27,
+      "id": 6
+    },
+    {
+      "userId": 9,
+      "postId": 46,
+      "id": 7
+    },
+    {
+      "userId": 9,
+      "postId": 3,
+      "id": 8
+    },
+    {
+      "userId": 9,
+      "postId": 47,
+      "id": 9
+    },
+    {
+      "userId": 9,
+      "postId": 41,
+      "id": 10
+    },
+    {
+      "userId": 9,
+      "postId": 5,
+      "id": 11
+    },
+    {
+      "userId": 9,
+      "postId": 42,
+      "id": 12
+    },
+    {
+      "userId": 9,
+      "postId": 19,
+      "id": 13
+    }
+  ],
   "posts": [
     {
       "userId": 1,
@@ -348,25 +415,11 @@
       "body": "Went on a street food adventure in my city. There's so much delicious food to discover right on your doorstep. #StreetFood #Foodie"
     },
     {
-      "title": "Bird Watching",
-      "body": "I love #parrots",
+      "title": "afds",
+      "body": "sfdvf",
       "userId": 9,
-      "createdAt": "2024-04-11T15:16:47.278Z",
+      "createdAt": "2024-04-12T07:37:16.030Z",
       "id": 56
-    },
-    {
-      "title": "Amazing Birds",
-      "body": "#Parrots = best birds in the world.",
-      "userId": 9,
-      "createdAt": "2024-04-11T15:26:42.236Z",
-      "id": 57
-    },
-    {
-      "title": "Ciao",
-      "body": "ciao",
-      "userId": 9,
-      "createdAt": "2024-04-11T15:29:26.372Z",
-      "id": 58
     }
   ]
 }

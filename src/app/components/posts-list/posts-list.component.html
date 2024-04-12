@@ -18,9 +18,13 @@
 				<p class="card-text date-p mb-0 float-start text-body-secondary">
 					<small>Posted on: {{ post.createdAt | date: 'MMM d, y, h:mm a' }}</small>
 				</p>
+				<div class="container d-flex justify-content-between mt-5">
+					<button type="button" class="btn btn-outline-danger" (click)="toggleFavorite(post.id)" ><i class="bi bi-heart"></i></button>
 				<a class="btn btn-primary float-end user-profile-btn" routerLink="active" [routerLink]="['/user',post.userId]">
 					User Profile
 				</a>
+				</div>
+				
 			</div>
 		</div>
 		<div class="col-md-2"></div>
