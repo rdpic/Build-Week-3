@@ -6,7 +6,6 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
 import { catchError, forkJoin, of } from 'rxjs';
-import { Favourites } from 'src/app/models/favourites.interface';
 
 @Component({
     selector: 'app-dashboard',
@@ -18,7 +17,7 @@ export class DashboardComponent implements OnInit {
     user!: User;
     posts: Post[] = [];
     toBeDeleted: number[] = [];
-    favourites: Post[] = [];
+    favorites: Post[] = [];
 
     constructor(
         private postSrv: PostService,
@@ -146,22 +145,24 @@ export class DashboardComponent implements OnInit {
     //------
     loadUserFavorites(userId: number) {
         this.postSrv.getAllFavorites(userId).subscribe((favorites) => {
-          console.log(favorites);
-          
+            console.log('All favorites fetched:', favorites);
+    
+            if (!favorites.length) {
+                this.favorites = [];
+                return;
+            }
+    
             const requests = favorites.map((fav) =>
-                this.postSrv.getPostsByUserId(fav.postId).pipe(
+                this.postSrv.getPost(fav.postId).pipe(
                     catchError((error) => {
-                        console.error(
-                            `Error fetching post details for ID ${fav.postId}: ${error}`
-                        );
+                        console.error(`Error fetching post details for post ID ${fav.postId}: ${error}`);
                         return of(null);
                     })
                 )
             );
             forkJoin(requests).subscribe((results) => {
-                this.favourites = results.filter(
-                    (result) => result !== null
-                ) as unknown as Post[];
+                this.favorites = results.filter((result): result is Post => result !== null);
+                console.log('Filtered favorites:', this.favorites);
             });
         });
     }

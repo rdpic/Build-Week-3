@@ -3,7 +3,7 @@ import { Post } from '../models/post.interface';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
-import { Favourites } from '../models/favourites.interface';
+import { Favorite } from '../models/favorite.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -39,18 +39,18 @@ export class PostService {
     }
 
     //-------
-    addFavorite(userId: number, postId: number): Observable<Favourites> {
-        const url = `${this.apiUrl}favourites`;
-        return this.http.post<Favourites>(url, { userId, postId });
+    addFavorite(userId: number, postId: number): Observable<Favorite> {
+        const url = `${this.apiUrl}favorites`;
+        return this.http.post<Favorite>(url, { userId, postId });
     }
 
     removeFavorite(favoriteId: number): Observable<any> {
-        const url = `${this.apiUrl}favourites/${favoriteId}`;
+        const url = `${this.apiUrl}favorites/${favoriteId}`;
         return this.http.delete(url);
     }
 
-    getAllFavorites(userId: number): Observable<Favourites[]> {
-        const url = `${this.apiUrl}favourites?userId=${userId}`;
-        return this.http.get<Favourites[]>(url);
+    getAllFavorites(userId: number): Observable<Favorite[]> {
+        const url = `${this.apiUrl}favorites?userId=${userId}`;
+        return this.http.get<Favorite[]>(url);
     }
 }

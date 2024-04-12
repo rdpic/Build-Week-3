@@ -64,71 +64,21 @@
       "id": 9
     }
   ],
-  "favourites": [
+  "favorites": [
     {
-      "userId": 9,
-      "postId": 34,
+      "userId": 1,
+      "postId": 13,
       "id": 1
     },
     {
-      "userId": 9,
-      "postId": 34,
+      "userId": 1,
+      "postId": 2,
       "id": 2
     },
     {
-      "userId": 9,
-      "postId": 42,
+      "userId": 1,
+      "postId": 39,
       "id": 3
-    },
-    {
-      "userId": 9,
-      "postId": 12,
-      "id": 4
-    },
-    {
-      "userId": 9,
-      "postId": 3,
-      "id": 5
-    },
-    {
-      "userId": 9,
-      "postId": 27,
-      "id": 6
-    },
-    {
-      "userId": 9,
-      "postId": 46,
-      "id": 7
-    },
-    {
-      "userId": 9,
-      "postId": 3,
-      "id": 8
-    },
-    {
-      "userId": 9,
-      "postId": 47,
-      "id": 9
-    },
-    {
-      "userId": 9,
-      "postId": 41,
-      "id": 10
-    },
-    {
-      "userId": 9,
-      "postId": 5,
-      "id": 11
-    },
-    {
-      "userId": 9,
-      "postId": 42,
-      "id": 12
-    },
-    {
-      "userId": 9,
-      "postId": 19,
-      "id": 13
     }
   ],
   "posts": [

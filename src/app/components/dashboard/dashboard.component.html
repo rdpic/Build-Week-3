@@ -114,13 +114,15 @@
         </div>
         <div class="col-4">
             <div class="container">
-                <h2>Your Favorites</h2>
-                <ul class="list-group" *ngIf="favourites.length > 0">
-                    <li class="list-group-item" *ngFor="let favorite of favourites">
-                        {{ favorite.userId }}
+                <h2>Liked Posts</h2>
+                <ul class="list-group" *ngIf="favorites.length > 0">
+                    <li class="list-group-item" *ngFor="let post of favorites">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ post.title }}</h4>
+                        </div>
                     </li>
                 </ul>
-                <p *ngIf="favourites.length === 0">No favorites yet.</p>
+                <p *ngIf="favorites.length === 0">No favorites yet.</p>
             </div>
         </div>
     </div>
